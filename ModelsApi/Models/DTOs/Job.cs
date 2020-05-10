@@ -13,6 +13,8 @@ namespace ModelsApi.Models.DTOs
         {
             Models = new List<Model>();
         }
+
+        [Key]
         public long JobId { get; set; }
         [MaxLength(64)]
         public string Customer { get; set; }
