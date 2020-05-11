@@ -5,7 +5,7 @@ namespace ModelsApi.Models.DTOs
 {
     public class NewJob
     {
-        [Key]
+        
         [MaxLength(64)]
         public string Customer { get; set; }
         public DateTimeOffset StartDate { get; set; }

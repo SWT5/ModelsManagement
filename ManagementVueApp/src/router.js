@@ -1,9 +1,9 @@
 import Vue from "vue";
 import Router from "vue-router";
-import Home from "./views/Home.vue";
-import Demo from "./views/Demo.vue";
+import Home from "./components/Home.vue";
+import Login from "./components/Login.vue";
 
-Vue.use(Router);
+Vue.use(Router);
 export default new Router({
 	mode: "history",
 	base: process.env.BASE_URL,
@@ -14,16 +14,9 @@ export default new Router({
 			component: Home
 		},
 		{
-			path: "/demo",
-			name: "demo",
-			component: Demo
-		},		{
-			path: "/about",
-			name: "about",
-			// lazy-loaded when the route is visited.
-			component: () =>
-				import(/* webpackChunkName: "about" */
-					"./views/About.vue")
+			path: "/Login",
+			name: "Login",
+			component: Login
 		}
 	]
 });

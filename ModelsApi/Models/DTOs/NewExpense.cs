@@ -8,7 +8,6 @@ namespace ModelsApi.Models.DTOs
 {
     public class NewExpense
     {
-        [Key]
         public long ModelId { get; set; }
         public long JobId { get; set; }
         public DateTime Date { get; set; }

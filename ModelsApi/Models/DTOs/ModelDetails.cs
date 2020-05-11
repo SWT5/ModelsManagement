@@ -13,7 +13,6 @@ namespace ModelsApi.Models.DTOs
         [MaxLength(32)]
         public string LastName { get; set; }
 
-        [Key]
         [MaxLength(254)]
         public string Email { get; set; }
         [MaxLength(12)]

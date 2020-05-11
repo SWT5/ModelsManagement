@@ -1,17 +1,23 @@
+
 <template>
     <div id="app">
-        <Home msg="Hello world!" />
+        <h1>App test</h1>
+        <div>
+            <router-link to="/">Home</router-link> |
+            <router-link to="/Login">Login</router-link> |
+        </div>
+        <router-view />
     </div>
 </template>
 
 <script>
-    import Home from './components/Home.vue';
+    //import Router from "vue-router";
+    //import Home from './components/Home.vue';
+    //import Login from './components/Login.vue';
+    
 
     export default {
         name: 'app',
-        components: {
-            Home
-        }
     };
 </script>
 
