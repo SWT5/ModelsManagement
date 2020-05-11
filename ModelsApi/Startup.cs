@@ -94,6 +94,7 @@ namespace ModelsApi
                 .WithOrigins("http://localhost:8080", "http://localhost:5000")
                 //.AllowAnyOrigin()
                 .AllowAnyMethod()
+                .AllowCredentials()
                 .AllowAnyHeader());
 
             // Enable middleware to serve generated Swagger as a JSON endpoint.
