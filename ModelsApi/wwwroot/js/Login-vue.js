@@ -3,7 +3,8 @@ vm = new Vue({
 	el: '#loginApp',
 	data: {
 		email: '',
-		password: ''
+		password: '',
+		message: ''
 	},
 	methods: {
 		loginApplication() {
