@@ -48,12 +48,12 @@ namespace ModelsApi.Data
                 .IsUnique();
         }
 
-        public DbSet<ModelsApi.Models.DTOs.Model> Model { get; set; }
+        //public DbSet<ModelsApi.Models.DTOs.Model> Model { get; set; }
 
-        public DbSet<ModelsApi.Models.DTOs.Manager> Manager { get; set; }
+        //public DbSet<ModelsApi.Models.DTOs.Manager> Manager { get; set; }
 
-        public DbSet<ModelsApi.Models.DTOs.Job> Job { get; set; }
+        //public DbSet<ModelsApi.Models.DTOs.Job> Job { get; set; }
 
-        public DbSet<ModelsApi.Models.DTOs.ModelDetails> ModelDetails { get; set; }
+        //public DbSet<ModelsApi.Models.DTOs.ModelDetails> ModelDetails { get; set; }
     }
 }

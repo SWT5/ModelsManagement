@@ -2,10 +2,10 @@
 <template>
     <div id="app">
         <h1>App test</h1>
-        <div>
+        <nav>
             <router-link to="/">Home</router-link> |
             <router-link to="/Login">Login</router-link> |
-        </div>
+        </nav>
         <router-view />
     </div>
 </template>

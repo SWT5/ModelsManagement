@@ -1,5 +1,5 @@
 <template>
-    <div id="loginVue">
+    <div id="Login">
         <div>
             <div>
                 <form>
@@ -38,11 +38,11 @@
             }
         },
         methods: {
-            loginApplication() {
+            loginApplication: function() {
                 let login = {};
                 login.email = this.form.email;
                 login.password = this.form.password;
-                fetch('/api/Account/login',
+                fetch('https://localhost:44368/api/Account/login',
                     {
                         method: 'POST',
                         body: JSON.stringify(login),
