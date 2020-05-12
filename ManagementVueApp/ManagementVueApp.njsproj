@@ -38,6 +38,9 @@
     <Content Include="src\components\Login.vue">
       <SubType>Code</SubType>
     </Content>
+    <Content Include="src\components\Manager.vue">
+      <SubType>Code</SubType>
+    </Content>
     <Content Include="src\router.js">
       <SubType>Code</SubType>
     </Content>
