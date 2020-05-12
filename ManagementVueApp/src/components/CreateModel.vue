@@ -35,7 +35,7 @@
 
 <script>
     export default {
-        name: 'Login',
+        name: 'CreateModel',
         data: function () {
             return {
                 form: {
