@@ -1,29 +1,32 @@
 <template>
     <v-container>
         <v-layout column>
-            <v-flex class="display-2 text-xs-center my-5">Manager View</v-flex>
-            <v-flex>
-                <div class="headline mt-3">Lorem ipsum</div>
-                <p class="subheading mt-3">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras pulvinar risus quis mauris interdum, in euismod nibh pretium. Etiam pulvinar tincidunt dapibus. Quisque sollicitudin, mauris a consequat consectetur, turpis nisl sollicitudin enim, id consectetur neque neque nec metus. Pellentesque dolor nisi, vulputate quis lobortis ac, tincidunt et quam. Mauris pulvinar blandit nisi nec mattis. Aliquam accumsan ut sem eget efficitur. Vivamus in tortor gravida eros laoreet condimentum nec vel dui. Nullam quam massa, ultrices eget tincidunt a, pulvinar ac libero.</p>
-            </v-flex>
-            <v-flex>
-                <div class="headline mt-3">Lorem ipsum</div>
-                <p class="subheading mt-3">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras pulvinar risus quis mauris interdum, in euismod nibh pretium. Etiam pulvinar tincidunt dapibus. Quisque sollicitudin, mauris a consequat consectetur, turpis nisl sollicitudin enim, id consectetur neque neque nec metus. Pellentesque dolor nisi, vulputate quis lobortis ac, tincidunt et quam. Mauris pulvinar blandit nisi nec mattis. Aliquam accumsan ut sem eget efficitur. Vivamus in tortor gravida eros laoreet condimentum nec vel dui. Nullam quam massa, ultrices eget tincidunt a, pulvinar ac libero.</p>
+            <form>
+                <div class="form-group">
+                    <label for="firstName">FirstName </label>
+                    <input type="text" v-model="form.firstName" placeholder="Please enter your firstName">
+                </div>
+                <div class="form-group">
+                    <label for="lastName">LastName </label>
+                    <input type="text" v-model="form.lastName" placeholder="Please enter your lastName">
+                </div>
+                <div class="form-group">
+                    <label for="email">Email </label>
+                    <input type="email" v-model="form.email" placeholder="Please enter your email">
+                </div>
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input type="text" v-model="form.password" placeholder="Please enter your password">
+                </div>
+                <div class="form-group">
+                    <button type="button" class="button"
+                            style="margin-left: 110px;"
+                            v-on:click="CreateManager">
+                        Create Manager
+                    </button> 
+                </div>
 
-                <p class="subheading mt-3">Nullam nec massa eu est fringilla lobortis. Praesent in enim in justo blandit varius. Cras placerat arcu in sapien rhoncus aliquet. Sed interdum tortor et tincidunt condimentum. Etiam consequat mi leo, in suscipit odio scelerisque molestie. Nam et purus consequat, iaculis augue vel, sagittis ligula. Vestibulum aliquet vulputate erat. Phasellus id mauris mauris. Nunc a maximus dolor. Curabitur ut vestibulum arcu. Curabitur non lacus justo. Cras varius a magna in semper. Nulla eros ante, consectetur faucibus sapien eu, rhoncus imperdiet dui. Sed viverra iaculis nunc, id pulvinar massa egestas vitae.</p>
-
-                <p class="subheading mt-3">Aenean erat metus, imperdiet eget nisl laoreet, venenatis ultricies ante. In interdum ante vel dictum ullamcorper. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Integer sit amet gravida diam. Aliquam in tempor metus. Fusce pellentesque pharetra sem, et luctus justo tempor dictum. Ut feugiat est sed tristique egestas. Nullam posuere a nunc in blandit. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Suspendisse laoreet ultrices eros, nec malesuada enim semper sit amet. Maecenas efficitur consectetur accumsan. Etiam in aliquam turpis, ut pharetra nulla. Vestibulum malesuada, nulla id elementum cursus, nibh dui rhoncus felis, suscipit mattis felis enim sed ex. Pellentesque scelerisque aliquam lorem, vel mattis nibh tincidunt ac. Suspendisse ac nibh sit amet lacus ullamcorper maximus.</p>
-            </v-flex>
-            <v-flex>
-                <div class="headline mt-3">Lorem ipsum</div>
-                <p class="subheading mt-3">Nullam nec massa eu est fringilla lobortis. Praesent in enim in justo blandit varius. Cras placerat arcu in sapien rhoncus aliquet. Sed interdum tortor et tincidunt condimentum. Etiam consequat mi leo, in suscipit odio scelerisque molestie. Nam et purus consequat, iaculis augue vel, sagittis ligula. Vestibulum aliquet vulputate erat. Phasellus id mauris mauris. Nunc a maximus dolor. Curabitur ut vestibulum arcu. Curabitur non lacus justo. Cras varius a magna in semper. Nulla eros ante, consectetur faucibus sapien eu, rhoncus imperdiet dui. Sed viverra iaculis nunc, id pulvinar massa egestas vitae.</p>
-            </v-flex>
-
-            <div id="newManager">
-                <ul>
-                    <li="new Manager">Add new Manager</li>
-                </ul>
-            </div>
+            </form>
         </v-layout>
     </v-container>
 </template>
@@ -39,17 +42,22 @@ export default {
                     firstName: '',
                     lastName: '',
                     email: '',
-                    isManager: true
+                    password:'',
                    
                 }
             }
         },
         method: {
-            GetManagers: function () {
+            CreateManager: function () {
+                let createManager = {};
+                createManager.firstName = this.form.firstName;
+                createManager.lastName = this.form.lastName;
+                createManager.password = this.form.password;
+                createManager.email = this.form.email;
                 fetch('https://localhost:44368/api/Managers',
                     {
-                        method: 'GET',
-                        body: JSON.stringify(GetManagers),
+                        method: 'POST',
+                        body: JSON.stringify(createManager),
                         headers: new Headers({
                             'Content-Type': 'application/json'
                         })
@@ -64,8 +72,5 @@ export default {
 </script>
 
 <style scoped>
-    a {
-        color: white;
-        text-decoration: none;
-    }
+    
 </style>
