@@ -24,8 +24,7 @@ export default new Router({
 			path: "/CreateModel",
 			name: "CreateModel",
 			component: CreateModel
-        }
-		},
+        },
 		{
 			path: "/Manager",
 			name: "Manager",

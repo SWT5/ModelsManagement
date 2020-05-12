@@ -5,7 +5,7 @@
         <nav>
             <router-link to="/">Home</router-link> |
             <router-link to="/Login">Login</router-link> |
-            <router-lin to="/CreateModel">Create Model</router-lin> | 
+            <router-link to="/CreateModel">Create Model</router-link> | 
             <router-link to="/Manager">Manager</router-link>
         </nav>
         <router-view />
