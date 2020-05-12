@@ -5,7 +5,8 @@ import Login from "./components/Login.vue";
 import CreateModel from "./components/CreateModel.vue";
 import Manager from "./components/Manager.vue";
 
-Vue.use(Router);
+Vue.use(Router);
+
 export default new Router({
 	mode: "history",
 	base: process.env.BASE_URL,
@@ -31,4 +32,4 @@ export default new Router({
 			component: Manager
 		}
 	]
-});
+});
