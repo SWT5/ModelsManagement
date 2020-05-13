@@ -2,6 +2,8 @@ import Vue from "vue";
 import Router from "vue-router";
 import Home from "./components/Home.vue";
 import Login from "./components/Login.vue";
+import Account from "./components/Account.vue";
+import Job from "./components/Job.vue";
 import CreateModel from "./components/CreateModel.vue";
 import CreateManager from "./components/CreateManager.vue";
 
@@ -20,6 +22,16 @@ export default new Router({
 			path: "/Login",
 			name: "Login",
 			component: Login
+		},
+		{
+			path: "/Account",
+			name: "Account",
+			component: Account
+		},
+		{
+			path: "/Job",
+			name: "Job",
+			component: Job
 		},
         {
 			path: "/CreateModel",
