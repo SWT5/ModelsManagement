@@ -4,6 +4,8 @@ import Home from "./components/Home.vue";
 import Login from "./components/Login.vue";
 import Account from "./components/Account.vue";
 import Job from "./components/Job.vue";
+import CreateModel from "./components/CreateModel.vue";
+import Manager from "./components/Manager.vue";
 
 Vue.use(Router);
 
@@ -30,6 +32,16 @@ export default new Router({
 			path: "/Job",
 			name: "Job",
 			component: Job
+		},
+        {
+			path: "/CreateModel",
+			name: "CreateModel",
+			component: CreateModel
+        },
+		{
+			path: "/Manager",
+			name: "Manager",
+			component: Manager
 		}
 	]
 });

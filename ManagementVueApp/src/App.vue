@@ -7,6 +7,8 @@
             <router-link to="/Login">Login</router-link> |
             <router-link to="/Account">Account</router-link> |
             <router-link to="/Job">Job</router-link> |
+            <router-link to="/CreateModel">Create Model</router-link> | 
+            <router-link to="/Manager">Manager</router-link>
         </nav>
         <router-view />
     </div>
