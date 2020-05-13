@@ -140,7 +140,7 @@
                     {
                         method: 'POST',
                         credentials: 'include',
-                        //body: JSON.stringify(createModel),
+                        body: JSON.stringify(createModel),
                         headers: {
                             'Authorization': 'Bearer ' + localStorage.getItem("token"),
                             'Content-Type': 'application/json'
