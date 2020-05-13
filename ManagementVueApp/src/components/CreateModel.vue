@@ -65,6 +65,10 @@
                         <input type="text" v-model="form.Comments" placeholder="Please enter Comments">
                     </div>
                     <div class="form-group">
+                        <label for="Password">Password</label>
+                        <input type="text" v-model="form.Password" placeholder="Please enter Password">
+                    </div>
+                    <div class="form-group">
                         <button type="button" class="button"
                                 style="margin-left: 110px;"
                                 v-on:click="CreateModel">
@@ -100,6 +104,7 @@
                     HairColor: '',
                     EyeColor: '',
                     Comments: '',
+                    Password: ''
                     //JobModels[]: {},
                     //Expenses[]: {}
 
@@ -128,6 +133,7 @@
                 createModel.Comments = this.Comments;
                 createModel.JobModels = this.JobModels;
                 createModel.Expenses = this.Expenses;
+                createModel.Password = this.Password;
                 
 
                 fetch(url,
