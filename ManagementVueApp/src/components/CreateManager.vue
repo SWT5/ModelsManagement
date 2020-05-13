@@ -1,6 +1,5 @@
-
 <template>
-    <div id="CreateModel">
+    <div id="CreateManager">
         <div>
             <div>
                 <form>
@@ -17,18 +16,14 @@
                         <input type="email" v-model="form.email" placeholder="Please enter your email">
                     </div>
                     <div class="form-group">
-                        <label for="phoneNo">phoneNo</label>
-                        <input type="number" v-model="form.phoneNo" placeholder="Please enter your phoneNo">
-                    </div>
-                    <div class="form-group">
                         <label for="password">Password</label>
                         <input type="text" v-model="form.password" placeholder="Please enter your password">
                     </div>
                     <div class="form-group">
                         <button type="button" class="button"
                                 style="margin-left: 110px;"
-                                v-on:click="createmodel">
-                            create model
+                                v-on:click="createmanager">
+                            create manager
                         </button> &nbsp;&nbsp;
                     </div>
                 </form>
@@ -38,17 +33,15 @@
     </div>
 </template>
 
-
 <script>
     export default {
-        name: 'CreateModel',
+        name: 'CreateManager',
         data: function () {
             return {
                 form: {
                     firstname: '',
                     lastname: '',
                     email: '',
-                    phoneNo:'',
                     password: ''
                 },
                 message: ''
@@ -56,8 +49,8 @@
         },
 
         methods: {
-            createmodel: function () {
-                fetch('https://localhost:44368/api/Models',
+            createmanager: function () {
+                fetch('https://localhost:44368/api/Managers',
                     {
                         method: 'POST',
                         credentials: 'include',
@@ -72,8 +65,7 @@
                         this.form.createmanager = data
                         //       }).catch(error => { console.log(error); 
                     });    
-
-                   }
+            }
         }
     }
 </script>

@@ -5,7 +5,8 @@ import Login from "./components/Login.vue";
 import Account from "./components/Account.vue";
 import Job from "./components/Job.vue";
 import CreateModel from "./components/CreateModel.vue";
-import Manager from "./components/Manager.vue";
+import CreateManager from "./components/CreateManager.vue";
+import CreateNewJob from "./components/CreateNewJob.vue";
 
 Vue.use(Router);
 
@@ -39,9 +40,14 @@ export default new Router({
 			component: CreateModel
         },
 		{
-			path: "/Manager",
-			name: "Manager",
-			component: Manager
+			path: "/CreateManager",
+			name: "CreateManager",
+			component: CreateManager
+		},
+		{
+			path: "/CreateNewJob",
+			name: "CreateNewJob",
+			component: CreateNewJob
 		}
 	]
 });
