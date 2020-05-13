@@ -6,7 +6,7 @@
             <router-link to="/">Home</router-link> |
             <router-link to="/Login">Login</router-link> |
             <router-link to="/CreateModel">Create Model</router-link> | 
-            <router-link to="/Manager">Manager</router-link>
+            <router-link to="/CreateManager">Create Manager</router-link>
         </nav>
         <router-view />
     </div>

@@ -3,7 +3,7 @@ import Router from "vue-router";
 import Home from "./components/Home.vue";
 import Login from "./components/Login.vue";
 import CreateModel from "./components/CreateModel.vue";
-import Manager from "./components/Manager.vue";
+import CreateManager from "./components/CreateManager.vue";
 
 Vue.use(Router);
 
@@ -27,9 +27,9 @@ export default new Router({
 			component: CreateModel
         },
 		{
-			path: "/Manager",
-			name: "Manager",
-			component: Manager
+			path: "/CreateManager",
+			name: "CreateManager",
+			component: CreateManager
 		}
 	]
 });

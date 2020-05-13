@@ -34,7 +34,7 @@
 <script>
   
 export default {
-    name: 'Manager',
+    name: 'CreateManager',
         data: function () {
             return {
                 form:

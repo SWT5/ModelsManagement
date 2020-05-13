@@ -140,7 +140,7 @@
                     {
                         method: 'POST',
                         credentials: 'include',
-                        //body: JSON.stringify(createModel),
+                        body: JSON.stringify(createModel),
                         headers: {
                             'Authorization': 'Bearer ' + localStorage.getItem("token"),
                             'Content-Type': 'application/json'
@@ -148,9 +148,9 @@
                     }).then(ResponseJson => {
                         var items = JSON.parse(ResponseJson);
                     })
-                    //.catch(error => this.setState({
-                    //    message: 'Something bad happened ' + error
-                    //}));
+                    .catch(error => this.setItem({
+                        message: 'Something bad happened ' + error
+                    }));
             }
         }
     }
