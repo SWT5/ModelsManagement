@@ -19,7 +19,6 @@
                         </button> &nbsp;&nbsp;
                     </div>
                 </form>
-                <span class="text-danger" style="margin-left: 110px;">{{message}}</span>
             </div>
         </div>
     </div>
@@ -34,7 +33,8 @@
                     email: '',
                     password: ''
                 },
-                message: ''
+                credentials: {
+                }
             }
         },
         methods: {
@@ -51,8 +51,10 @@
                         })
                     }).then(res => res.json().then((token) => {
                         localStorage.setItem("token", token.jwt);
+                        this.credentials = JSON.parse(atob(token.jwt.split(".")[1]));
                     }
                     ).catch(error => alert('Error:', error)));
+                
             }
         }
     }

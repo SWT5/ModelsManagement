@@ -17,21 +17,24 @@
             return {
                 form: {
                     account: []
+                    //role: '',
+                    //modelId: ''
                 },
-
+                credentials: {
+                }
             }
-        },
+        },       
         created() {
             let self = this;
-            this.getManagerAccount();
-            //this.getModelAccount();
+            this.credentials = JSON.parse(atob(localStorage.getItem("token").split(".")[1]));
+            this.validateAccount();
+
         },
         methods: {
             getManagerAccount: function () {
-                var url = "https://localhost:44368/api/Managers";
+                let url = 'https://localhost:44368/api/Managers';
                 let account = {};
                 account.account = this.form.account;
-                //Account.isManager = this.form.isManager;
                 fetch(url,
                     {
                         method: 'GET',
@@ -44,11 +47,12 @@
                         return response.json()
                     }).then((data) => {
                         this.form.account = data;
+                        //this.credentials = JSON.parse(atob(localStorage.getItem("token").split(".")[1]));
                     }).catch(error => { console.log(error); });
 
             },
             getModelAccount: function () {
-                var url = "https://localhost:44368/api/Models";
+                let url = 'https://localhost:44368/api/Models/' + this.credentials.ModelId;
                 let account = {};
                 account.account = this.form.account;
 
@@ -65,6 +69,15 @@
                     }).then((data) => {
                         this.form.account = data;
                     }).catch(error => { console.log(error); });
+            },
+            validateAccount: function () {
+
+                //this.credentials = JSON.parse(atob(localStorage.getItem("token").split(".")[1]));
+                if(this.credentials.role == "Manager")
+                    this.getManagerAccount();
+                else {
+                    this.getModelAccount(); 
+                }
             }
 
         }

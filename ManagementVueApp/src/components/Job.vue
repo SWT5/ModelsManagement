@@ -50,7 +50,7 @@
                             <li v-for="model in form.models">
                                 <div>
                                     ModelId: {{model.efModelId}} <br />
-                                    Model: {{model.firstName}} {{model.lastName}} <br />
+                                    Model: {{model.firstName}} {{model.lastName}} <br /><br/>
                                 </div>
                             </li>
                         </ul>
