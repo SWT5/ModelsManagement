@@ -34,7 +34,8 @@
                     password: ''
                 },
                 credentials: {
-                }
+                },
+                isManager: false
             }
         },
         methods: {
@@ -52,6 +53,18 @@
                     }).then(res => res.json().then((token) => {
                         localStorage.setItem("token", token.jwt);
                         this.credentials = JSON.parse(atob(token.jwt.split(".")[1]));
+                        let role = this.credentials['http://schemas.microsoft.com/ws/2008/06/identity/claims/role'];
+
+                        if (role == "Manager") {
+                            this.isManager = true;
+                            localStorage.setItem("isManager", this.isManager);
+                        }
+                        else {
+                            this.isManager = false;
+                            localStorage.setItem("isManager", this.isManager);
+                        }
+
+                        
                     }
                     ).catch(error => alert('Error:', error)));
                 

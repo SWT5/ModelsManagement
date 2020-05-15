@@ -72,17 +72,26 @@
                     JobId: '',
                     modelId: ''
                 },
+                credentials: {
+                }
 
             }
         },
         created() {
             let self = this;
-            this.getJobs();
-            this.getModels();
+
+            self.getJobs();
+            self.validateAccount();
+            //this.getModels();
+            //if (localStorage.getItem("isManager") == true) {
+            //    this.getModels();
+            //}
+
+
         },
         methods: {
             getJobs: function () {
-                var url = "https://localhost:44368/api/Jobs";
+                var url = 'https://localhost:44368/api/Jobs';
                 let jobs = {};
                 jobs.jobs = this.form.jobs;
                 
@@ -98,7 +107,9 @@
                         return response.json()
                     }).then((data) => {
                         this.form.jobs = data
-                    }).catch(error => { console.log(error); });
+                    }).catch(error => alert('Error:', error));
+
+                 
                     
             },
             addModel: function () {
@@ -116,7 +127,7 @@
                         var items = response.json()
                     }).then((data) => {
                         this.form.jobs = data
-                    }).catch(error => { console.log(error); });
+                    }).catch(error => alert('Error:', error));
 
             },
             getModels: function () {
@@ -135,7 +146,7 @@
                         return response.json()
                     }).then((data) => {
                         this.form.models = data
-                    }).catch(error => { console.log(error); });
+                    }).catch(error => alert('Error:', error));
             },
             deleteModel: function () {
                 var url = 'https://localhost:44368/api/Jobs/' + this.form.jobId + '/model/' + this.form.modelId;
@@ -153,8 +164,16 @@
                     }).then((data) => {
                         this.form.jobs = data
                     })
-                    .catch(error => { console.log(error); });
+                    .catch(error => alert('Error:', error));
 
+            },
+            validateAccount: function () {
+                this.credentials = JSON.parse(atob(localStorage.getItem("token").split(".")[1]));
+                let role = this.credentials['http://schemas.microsoft.com/ws/2008/06/identity/claims/role'];
+
+                if (role == "Manager") {
+                    this.getModels();
+                }
             }
 
         }

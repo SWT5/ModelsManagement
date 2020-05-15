@@ -23,10 +23,10 @@
                 credentials: {
                 }
             }
-        },       
+        },
         created() {
             let self = this;
-            this.credentials = JSON.parse(atob(localStorage.getItem("token").split(".")[1]));
+
             this.validateAccount();
 
         },
@@ -48,7 +48,7 @@
                     }).then((data) => {
                         this.form.account = data;
                         //this.credentials = JSON.parse(atob(localStorage.getItem("token").split(".")[1]));
-                    }).catch(error => { console.log(error); });
+                    }).catch(error => alert('Error:', error));
 
             },
             getModelAccount: function () {
@@ -68,23 +68,23 @@
                         return response.json();
                     }).then((data) => {
                         this.form.account = data;
-                    }).catch(error => { console.log(error); });
+                    }).catch(error => alert('Error:', error));
             },
             validateAccount: function () {
+                this.credentials = JSON.parse(atob(localStorage.getItem("token").split(".")[1]));
+                let role = this.credentials['http://schemas.microsoft.com/ws/2008/06/identity/claims/role'];
 
-                //this.credentials = JSON.parse(atob(localStorage.getItem("token").split(".")[1]));
-                if(this.credentials.role == "Manager")
+                if (role == "Manager")
                     this.getManagerAccount();
                 else {
-                    this.getModelAccount(); 
+                    this.getModelAccount();
                 }
             }
 
         }
-            
+
+
     }
-
-
 </script>
 
 <style scoped>
