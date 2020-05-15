@@ -4,8 +4,8 @@
             <div>
                 <form>
                     <div class="form-group">
-                        <label for="custumer">costumer</label>
-                        <input type="text" v-model="form.custumer" placeholder="Please enter your custumer">
+                        <label for="Customer">customer</label>
+                        <input type="text" v-model="form.customer" placeholder="Please enter your custumer">
                     </div>
                     <div class="form-group">
                         <label for="startDate">startDate</label>
@@ -43,7 +43,7 @@
         data: function () {
             return {
                 form: {
-                    costumer: '',
+                    customer: '',
                     startDate: '',
                     days: 1,
                     location: '',
@@ -66,8 +66,7 @@
                     }).then(response => {
                         return response.json()
                     }).then((data) => {
-                        this.form.createmanager = data
-                        //       }).catch(error => { console.log(error); 
+                        this.form = data
                     });
             }
         }
