@@ -7,6 +7,7 @@ import Job from "./components/Job.vue";
 import CreateModel from "./components/CreateModel.vue";
 import CreateManager from "./components/CreateManager.vue";
 import CreateNewJob from "./components/CreateNewJob.vue";
+import Expenses from "./components/Expenses.vue";
 
 Vue.use(Router);
 
@@ -48,6 +49,11 @@ export default new Router({
 			path: "/CreateNewJob",
 			name: "CreateNewJob",
 			component: CreateNewJob
+		},
+		{
+			path: "/Expenses",
+			name: "Expenses",
+			component: Expenses
 		}
 	]
 });
