@@ -4,8 +4,8 @@
             <div>
                 <form>
                     <div class="form-group">
-                        <label for="custumer">costumer</label>
-                        <input type="text" v-model="form.custumer" placeholder="Please enter your custumer">
+                        <label for="costumer">costumer</label>
+                        <input type="text" v-model="form.costumer" placeholder="Please enter your custumer">
                     </div>
                     <div class="form-group">
                         <label for="startDate">startDate</label>
