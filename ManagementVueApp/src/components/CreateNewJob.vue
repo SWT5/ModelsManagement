@@ -4,10 +4,6 @@
             <div>
                 <form>
                     <div class="form-group">
-                        <label for="jobId">jobId</label>
-                        <input type="text" v-model="form.jobId" placeholder="Please enter your jobId">
-                    </div>
-                    <div class="form-group">
                         <label for="custumer">costumer</label>
                         <input type="text" v-model="form.custumer" placeholder="Please enter your custumer">
                     </div>
@@ -17,7 +13,7 @@
                     </div>
                     <div class="form-group">
                         <label for="days">days</label>
-                        <input type="number" v-model="form.days" placeholder="how many days">
+                        <input type="number" v-model.number="form.days" placeholder="how many days">
                     </div>
                     <div class="form-group">
                         <label for="location">location</label>
@@ -47,13 +43,13 @@
         data: function () {
             return {
                 form: {
-                    jobId:'',
-                    custumer: '',
+                    costumer: '',
                     startDate: '',
-                    days: 0,
+                    days: 1,
                     location: '',
                     comments: ''
-                }
+                },
+                message:''
             }
         },
         methods: {
